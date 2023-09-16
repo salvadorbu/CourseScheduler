@@ -75,4 +75,8 @@ public class GradeDistributionItem {
         this.instructor = instructor;
         this.GPA = GPA;
     }
+
+    public GradeDistributionItem(){
+
+    }
 }

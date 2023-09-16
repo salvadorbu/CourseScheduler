@@ -33,19 +33,25 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 	//then it will be added to the database again at the end of the collection.
 	void createGradeDistributionItems() {
 		System.out.println("Data creation started...");
-		GradeDistributionItem item = gradeDistributionItemRepo.save(new GradeDistributionItem("ALCE 5814",
-				"ALCE", "5814", "Scherer", 4));
+//		GradeDistributionItem item = gradeDistributionItemRepo.save(new GradeDistributionItem("ALCE 5814",
+//				"ALCE", "5814", "Scherer", 4));
+//		gradeDistributionItemRepo.save(new GradeDistributionItem("CHEM 3625",
+//				"CHEM", "3625", "Orler", 3.4));
+//		gradeDistributionItemRepo.save(new GradeDistributionItem("CSES 3124",
+//				"CSES", "3124", "ANGEL", 3.8));
+//		gradeDistributionItemRepo.save(new GradeDistributionItem("ECE 3274",
+//				"ECE", "3274", "Cooper", 3.68));
+//		gradeDistributionItemRepo.save(new GradeDistributionItem("ECE 3354",
+//				"ECE", "3354", "Cooper", 3));
+//		gradeDistributionItemRepo.save(new GradeDistributionItem("ENSC 3124",
+//				"ENSC", "3124", "Angel", 3.68));
+//		System.out.println("Data creation complete...");
+
+
+
 		gradeDistributionItemRepo.save(new GradeDistributionItem("CHEM 3625",
-				"CHEM", "3625", "Orler", 3.4));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("CSES 3124",
-				"CSES", "3124", "ANGEL", 3.8));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("ECE 3274",
-				"ECE", "3274", "Cooper", 3.68));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("ECE 3354",
-				"ECE", "3354", "Cooper", 3));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("ENSC 3124",
-				"ENSC", "3124", "Angel", 3.68));
-		System.out.println("Data creation complete...");
+			"CHEM", "3625", "Orler", 3.4));
+
 	}
 
 	// READ
