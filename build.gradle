@@ -24,7 +24,8 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.testng:testng:7.1.0'
+	implementation 'org.jsoup:jsoup:1.14.3'
+	implementation 'junit:junit:4.13.2'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'

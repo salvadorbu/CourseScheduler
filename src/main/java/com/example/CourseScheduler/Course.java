@@ -6,7 +6,7 @@ public class Course {
     private double longitude;
     private double latitude;
     private double averageGPA;
-    String classTime; // Format [DAYS]-[HOUR] (i.e. MWF-4:00pm)
+    String classTime; // Format [DAYS],[HOUR] (i.e. MWF,4:00pm-5:00pm)
 
 
     public Course(String prof, int crn, double lon, double lat, double gpa, String time) {
