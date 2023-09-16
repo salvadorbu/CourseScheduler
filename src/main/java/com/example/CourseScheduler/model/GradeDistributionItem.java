@@ -1,10 +1,18 @@
-package model;
+package com.example.CourseScheduler.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("gradedistributionitems")
 public class GradeDistributionItem {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Id
     private String id;
 
@@ -16,11 +24,11 @@ public class GradeDistributionItem {
         this.subject = subject;
     }
 
-    public int getCourseNo() {
+    public String getCourseNo() {
         return courseNo;
     }
 
-    public void setCourseNo(int courseNo) {
+    public void setCourseNo(String courseNo) {
         this.courseNo = courseNo;
     }
 
@@ -41,11 +49,11 @@ public class GradeDistributionItem {
     }
 
     private String subject;
-    private int courseNo;
+    private String courseNo;
     private String instructor;
     private double GPA;
 
-    public GradeDistributionItem(String id, String subject, int courseNo, String instructor, double GPA){
+    public GradeDistributionItem(String id, String subject, String courseNo, String instructor, double GPA){
         super();
         this.id = id;
         this.subject = subject;
