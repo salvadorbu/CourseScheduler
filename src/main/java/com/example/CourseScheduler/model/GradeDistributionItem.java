@@ -49,9 +49,23 @@ public class GradeDistributionItem {
     }
 
     private String subject;
+
+    private String className;
     private String courseNo;
+
+    private String CRN;
     private String instructor;
+
+    private String startTime;
+
+    private String endTime;
     private double GPA;
+
+    private String building;
+
+    private String room;
+
+
 
     public GradeDistributionItem(String id, String subject, String courseNo, String instructor, double GPA){
         super();
