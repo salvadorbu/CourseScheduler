@@ -36,39 +36,16 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 	void createGradeDistributionItems() throws IOException {
 		System.out.println("Data creation started...");
 
-		/*
-		add stuff
-		 */
 		Map<String, List<GradeDistributionItem>> gdiMapping = GradeDistributionFactory.insertGPA();
 
 		for (List<GradeDistributionItem> gdi : gdiMapping.values()) {
 			for(GradeDistributionItem item : gdi){
+				System.out.println(item.toString());
 				gradeDistributionItemRepo.save(item);
 			}
 		}
 
 		System.out.println("Data creation complete...");
-	}
-
-	// READ
-	// 1. Show all the data
-	public void showAllGradeDistributionItems() {
-		gradeDistributionItemRepo.findAll().forEach(item -> System.out.println(getItemDetails(item)));
-	}
-
-	// 2. Get item by name
-	public void getGradeDistributionItemByCourseNo(String courseNo) {
-		System.out.println("Getting item by course number: " + courseNo);
-		GradeDistributionItem item = gradeDistributionItemRepo.findItemByCourseNo(courseNo);
-		System.out.println(getItemDetails(item));
-	}
-
-	// 3. Get name and quantity of a all items of a particular category
-	public void getItemsByInstructor(String instructor) {
-		System.out.println("Getting items for the instructor: " + instructor);
-		List<GradeDistributionItem> list = gradeDistributionItemRepo.findAll(instructor);
-
-		list.forEach(item -> System.out.println("Course Number: " + item.getCourseNo() + ", GPA: " + item.getGPA()));
 	}
 
 	// 4. Get count of documents in the collection
@@ -91,26 +68,6 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 		return "";
 	}
 
-	public void updateCategoryName(String instructor) {
-
-		// Change to this new value
-		String newInstructor = "Chung";
-
-		// Find all the items with the instructor
-		List<GradeDistributionItem> list = gradeDistributionItemRepo.findAll(instructor);
-
-		list.forEach(item -> {
-			// Update the category in each document
-			item.setInstructor(newInstructor);
-		});
-
-		// Save all the items in database
-		List<GradeDistributionItem> itemsUpdated = gradeDistributionItemRepo.saveAll(list);
-
-		if (itemsUpdated != null)
-			System.out.println("Successfully updated " + itemsUpdated.size() + " items.");
-	}
-	// DELETE
 	public void deleteGradeDistributionItem(String id) {
 		gradeDistributionItemRepo.deleteById(id);
 		System.out.println("Item with id " + id + " deleted...");

@@ -11,6 +11,4 @@ public interface ItemRepository extends MongoRepository<GradeDistributionItem, S
 
     @Query(value="{subject:'?0', courseNo: '?1'}")
     List<GradeDistributionItem> findAll(String subject, String courseNo);
-
-    public long count();
 }

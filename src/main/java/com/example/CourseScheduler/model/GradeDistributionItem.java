@@ -5,9 +5,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("gradedistributionitems")
 public class GradeDistributionItem {
-
-
-    @Id
     public String getSubject() {
         return subject;
     }
@@ -43,6 +40,7 @@ public class GradeDistributionItem {
     private String subject;
 
     private String courseNo;
+    @Id
 
     private String CRN;
     public String getCRN() { return CRN; }
@@ -78,9 +76,5 @@ public class GradeDistributionItem {
     public String toString() {
         return "crn=" + CRN + ",subject=" + subject +
                 ",courseNo=" + courseNo + ",instructor=" + instructor + ",room=" + room + ",building=" + building;
-    }
-
-    public GradeDistributionItem(){
-
     }
 }

@@ -33,7 +33,6 @@ public class GradeDistributionFactory {
             for (Map.Entry<String, List<GradeDistributionItem>> entry : gdiMapping.entrySet()) {
                 List<GradeDistributionItem> gradeDistributionItems = entry.getValue();
                 for(GradeDistributionItem item : gradeDistributionItems){
-                    System.out.println(item.toString());
                     gpa = searchGPA(item.getCourseNo(), item.getInstructor().substring(item.getInstructor().lastIndexOf(" ") + 1));
                     item.setGPA(gpa);
                 }
@@ -48,7 +47,7 @@ public class GradeDistributionFactory {
 
     static double searchGPA(String courseNo, String professor) throws IOException {
         //Replace with your local file path to updated.csv data dump
-        BufferedReader br = new BufferedReader(new FileReader("C:\\Code\\grade_distro_formatter\\updated.csv"));
+        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\salva\\Downloads\\updated.csv"));
         String line;
         while ( (line = br.readLine()) != null ) {
             String[] values = line.split(",");
