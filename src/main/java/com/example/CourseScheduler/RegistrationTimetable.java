@@ -1,8 +1,9 @@
 package com.example.CourseScheduler;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.util.*;
 import java.io.IOException;
+
+import com.example.CourseScheduler.model.GradeDistributionItem;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,7 +18,7 @@ public class RegistrationTimetable {
         this.termYear = termYear;
     }
 
-    public void getCourses(String subject, String subjectID) throws IOException {
+    public List<GradeDistributionItem> getCourses(String subject) throws IOException {
         Connection.Response response = Jsoup.connect("https://apps.es.vt.edu/ssb/HZSKVTSC.P_ProcRequest")
                 .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
                 .header("Accept-Language", "en-US,en;q=0.9")
@@ -73,34 +74,39 @@ public class RegistrationTimetable {
                 .header("sec-ch-ua", "\"Chromium\";v=\"116\", \"Not)A;Brand\";v=\"24\", \"Google Chrome\";v=\"116\"")
                 .header("sec-ch-ua-mobile", "?0")
                 .header("sec-ch-ua-platform", "\"Windows\"")
-                .requestBody("CAMPUS=0&TERMYEAR=202309&CORE_CODE=AR%25&subj_code=AOE&SCHDTYPE=%25&CRSE_NUMBER=&crn=&open_only=&disp_comments_in=Y&sess_code=%25&BTN_PRESSED=FIND+class+sections&inst_name=")
+                .requestBody("CAMPUS=0&TERMYEAR=202309&CORE_CODE=AR%25&subj_code=" + subject + "&SCHDTYPE=%25&CRSE_NUMBER=&crn=&open_only=&disp_comments_in=Y&sess_code=%25&BTN_PRESSED=FIND+class+sections&inst_name=")
                 .method(org.jsoup.Connection.Method.POST)
                 .ignoreContentType(true)
                 .execute();
         Document doc = response.parse();
-        Elements timeElements = doc.select("html > body > center > div.class1 > table.dataentrytable > tbody > tr > td.deright");
-        Elements descElements = doc.select("html > body > center > div.class1 > table.dataentrytable > tbody > tr > td.deleft");
-        Elements dayElements = doc.select("html > body > center > div.class1 > table.dataentrytable > tbody > tr > td.dedefault");
-        Element[] courseArr = (Element[])descElements.toArray(new Element[0]);
+        Elements elements = doc.select("html > body > center > div.class1 > table.dataentrytable > tbody > tr");
+        List<GradeDistributionItem> gdiList = new ArrayList<>();
+        for (Element element : elements) {
+            Elements desc = element.select("td.deleft");
+            Elements times = element.select("td.deright");
+            Elements days = element.select("td.dedefault");
+            String crn = element.select("td.dedefault > a > b").text();
 
-        for (Element element : timeElements) {
-            System.out.println(element.text());
-        }
-
-        for (int i = 2; i < courseArr.length - 1; i++) {
-            String instructor = courseArr[i].text();
-            String[] location = courseArr[i+1].text().split(" ");
-            String building = "";
-            String room = "";
-            if (location.length == 2) {
-                building = location[0];
-                room = location[1];
+            if (!times.hasText() || crn.length() == 0) {
+                continue;
             }
 
+            String room = "";
+            String building = "";
+
+            String[] hours = times.text().split(" ");
+            String[] description = desc.text().split(" ");
+            String[] classInfo = description[0].split("-");
+            if (description.length < 5) continue;
+            room = description[description.length - 1];
+            building = description[description.length -2];
+            String professorName = description[description.length - 4] + " " + description[description.length - 3];
+
+            GradeDistributionItem gdi = new GradeDistributionItem(crn, classInfo[0], classInfo[1],
+                    professorName, 0.0, room, building, hours[0], hours[1]);
+            gdiList.add(gdi);
         }
 
-        for (Element element : dayElements) {
-            System.out.println(element.text());
-        }
+        return gdiList;
     }
 }

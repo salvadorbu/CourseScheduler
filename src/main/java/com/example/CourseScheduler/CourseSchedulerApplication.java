@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.CourseScheduler.repository.ItemRepository;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -31,20 +32,13 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 	//CREATE
 	//NOTE: If items are in the database already, then they will not be entered again. So if an item is deleted,
 	//then it will be added to the database again at the end of the collection.
-	void createGradeDistributionItems() {
+	void createGradeDistributionItems() throws IOException {
 		System.out.println("Data creation started...");
-		GradeDistributionItem item = gradeDistributionItemRepo.save(new GradeDistributionItem("ALCE 5814",
-				"ALCE", "5814", "Scherer", 4));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("CHEM 3625",
-				"CHEM", "3625", "Orler", 3.4));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("CSES 3124",
-				"CSES", "3124", "ANGEL", 3.8));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("ECE 3274",
-				"ECE", "3274", "Cooper", 3.68));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("ECE 3354",
-				"ECE", "3354", "Cooper", 3));
-		gradeDistributionItemRepo.save(new GradeDistributionItem("ENSC 3124",
-				"ENSC", "3124", "Angel", 3.68));
+		String[] courses = new String[] {"AOE","ALCE","AAEC","ALS","AINS","APSC","APS","AHRM","ARBC","ARCH","AAD","ART","BDS","BCHM","BIOL","BSE","BMVS","BMSP","BMES","BC","BUS","BIT","EDCT","CHE","CHEM","CHN","CINE","CEE","CLA","COS","COMM","CMST","CMDA","CS","CEM","CONS","CEP","CRIM","CSES","DASC","DANC","ECON","EDCO","EDCI","EDEP","ECE","ENGR","ENGE","ESM","ENGL","ENT","ENSC","FCS","FMD","FIN","FNAD","FA","FIW","FST","FL","FREC","VT","FR","GEOG","GEOS","GER","GR","HEB","HIST","HORT","HTM","HD","HNFE","HUM","ISE","IDS","EDIT","ISC","ITDS","IS","ITAL","JPN","JMC","JUD","KOR","LAR","LAT","LDRS","LAHS","MGT","MKTG","MSE","MATH","ME","MTRG","MN","AROTC","MS","AS","MINE","MUS","NANO","NR","NEUR","NSEG","PSVP","PHIL","PPE","PHYS","PPWS","PSCI","PHS","PORT","PM","PSYC","PR","REAL","RLCL","RED","RUS","SPES","SPIA","STS","STL","SOC","SPAN","STAT","SUMA","SBIO","SYSB","EDTE","TA","TBMH","UNIV","UH","REG","UAP","WATR","WGS"};
+		RegistrationTimetable rt = new RegistrationTimetable("2023");
+		/*
+		add stuff
+		 */
 		System.out.println("Data creation complete...");
 	}
 
@@ -120,7 +114,7 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 		);
 	}
 
-	public void run(String... args) {
+	public void run(String... args) throws IOException {
 		System.out.println("-------------CREATE ITEMS-------------------------------\n");
 
 		createGradeDistributionItems();

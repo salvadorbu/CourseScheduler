@@ -50,7 +50,6 @@ public class GradeDistributionItem {
 
     private String subject;
 
-    private String className;
     private String courseNo;
 
     private String CRN;
@@ -67,12 +66,22 @@ public class GradeDistributionItem {
 
 
 
-    public GradeDistributionItem(String id, String subject, String courseNo, String instructor, double GPA){
+    public GradeDistributionItem(String id, String subject, String courseNo, String instructor, double GPA, String room, String building, String startTime, String endTime){
         super();
         this.id = id;
         this.subject = subject;
         this.courseNo = courseNo;
         this.instructor = instructor;
         this.GPA = GPA;
+        this.room = room;
+        this.building = building;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
+    @Override
+    public String toString() {
+        return "crn=" + id + ",subject=" + subject +
+                ",courseNo=" + courseNo + ",instructor=" + instructor + ",room=" + room + ",building=" + building;
     }
 }
