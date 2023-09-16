@@ -1,15 +1,15 @@
 package com.example.CourseScheduler;
 
-<<<<<<< HEAD
-import org.testng.annotations.Test;
-=======
+
+
+import com.example.CourseScheduler.model.GradeDistributionItem;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Assert;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
->>>>>>> 9c99b31a7ff7678fa32954087c97940b93cf8084
 
 public class RegistrationTimetableTest {
     private RegistrationTimetable rt;
@@ -24,6 +24,9 @@ public class RegistrationTimetableTest {
 
     @Test
     public void testSampleRequest() throws IOException {
-        rt.getCourses("MATH", "2114");
+        List<GradeDistributionItem> list = (ArrayList)rt.getCourses("CS");
+        for (GradeDistributionItem gdi : list) {
+            System.out.println(gdi.toString());
+        }
     }
 }
