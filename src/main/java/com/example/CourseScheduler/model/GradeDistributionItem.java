@@ -5,17 +5,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("gradedistributionitems")
 public class GradeDistributionItem {
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     @Id
-    private String id;
-
     public String getSubject() {
         return subject;
     }
@@ -53,6 +45,8 @@ public class GradeDistributionItem {
     private String courseNo;
 
     private String CRN;
+    public String getCRN() { return CRN; }
+
     private String instructor;
 
     private String startTime;
@@ -63,12 +57,13 @@ public class GradeDistributionItem {
     private String building;
 
     private String room;
+    public String getRoom() { return room; }
 
 
 
-    public GradeDistributionItem(String id, String subject, String courseNo, String instructor, double GPA, String room, String building, String startTime, String endTime){
+    public GradeDistributionItem(String crn, String subject, String courseNo, String instructor, double GPA, String room, String building, String startTime, String endTime){
         super();
-        this.id = id;
+        this.CRN = crn;
         this.subject = subject;
         this.courseNo = courseNo;
         this.instructor = instructor;
@@ -81,7 +76,11 @@ public class GradeDistributionItem {
 
     @Override
     public String toString() {
-        return "crn=" + id + ",subject=" + subject +
+        return "crn=" + CRN + ",subject=" + subject +
                 ",courseNo=" + courseNo + ",instructor=" + instructor + ",room=" + room + ",building=" + building;
+    }
+
+    public GradeDistributionItem(){
+
     }
 }
