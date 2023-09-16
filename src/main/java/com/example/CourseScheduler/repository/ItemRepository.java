@@ -7,11 +7,10 @@ import org.springframework.data.mongodb.repository.Query;
 import java.util.List;
 
 public interface ItemRepository extends MongoRepository<GradeDistributionItem, String> {
-    @Query("{courseNo:'?0'}")
-    GradeDistributionItem findItemByCourseNo(String courseNo);
 
-    @Query(value="{instructor:'?0'}", fields="{'courseNo' : 1, 'GPA' : 1}")
-    List<GradeDistributionItem> findAll(String instructor);
+
+    @Query(value="{subject:'?0', courseNo: '?1'}")
+    List<GradeDistributionItem> findAll(String subject, String courseNo);
 
     public long count();
 }

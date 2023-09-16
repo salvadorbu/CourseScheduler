@@ -21,4 +21,13 @@ public class GradeDistributionFactory {
 
         return gdiMapping;
     }
+
+    public static void main(String[] args) throws IOException {
+        Map<String, List<GradeDistributionItem>> map = GradeDistributionFactory.generateGDIMapping();
+        for (List<GradeDistributionItem> list : map.values()) {
+            for (GradeDistributionItem gd : list) {
+                System.out.println(gd.toString());
+            }
+        }
+    }
 }
