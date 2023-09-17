@@ -47,7 +47,7 @@ public class GradeDistributionFactory {
 
     static double searchGPA(String courseNo, String professor) throws IOException {
         //Replace with your local file path to updated.csv data dump
-        BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\salva\\Downloads\\updated.csv"));
+        BufferedReader br = new BufferedReader(new FileReader("/Users/dannychung/Downloads/updated.csv"));
         String line;
         while ( (line = br.readLine()) != null ) {
             String[] values = line.split(",");

@@ -1,0 +1,547 @@
+[
+  {
+    "buildingCode": "AA",
+    "latitude": 37.2286,
+    "longitude": -80.41629
+  },
+  {
+    "buildingCode": "AGNEW",
+    "latitude": 37.22476,
+    "longitude": -80.42415
+  },
+  {
+    "buildingCode": "AJ E",
+    "latitude": 37.22311,
+    "longitude": -80.42105
+  },
+  {
+    "buildingCode": "AJ W",
+    "latitude": 37.22311,
+    "longitude": -80.42105
+  },
+  {
+    "buildingCode": "ARMRY",
+    "latitude": 37.22932,
+    "longitude": -80.41592
+  },
+  {
+    "buildingCode": "ART C",
+    "latitude": 37.2317,
+    "longitude": -80.42072
+  },
+  {
+    "buildingCode": "BFH",
+    "latitude": 37.23005,
+    "longitude": -80.42548
+  },
+  {
+    "buildingCode": "BOOK",
+    "latitude": 37.22816,
+    "longitude": -80.41857
+  },
+  {
+    "buildingCode": "BUR",
+    "latitude": 37.229,
+    "longitude": -80.42371
+  },
+  {
+    "buildingCode": "BURCH",
+    "latitude": 37.22958,
+    "longitude": -80.42441
+  },
+  {
+    "buildingCode": "CAM E",
+    "latitude": 37.2262,
+    "longitude": -80.42153
+  },
+  {
+    "buildingCode": "CAM M",
+    "latitude": 37.2262,
+    "longitude": -80.42153
+  },
+  {
+    "buildingCode": "CEC",
+    "latitude": 37.22822,
+    "longitude":  -80.41756
+  },
+  {
+    "buildingCode": "CHAP",
+    "latitude": 37.22885,
+    "longitude": -80.42045
+  },
+  {
+    "buildingCode": "CHRNE",
+    "latitude": 37.22265,
+    "longitude": -80.42189
+  },
+  {
+    "buildingCode": "CO",
+    "latitude": 37.22992,
+    "longitude": -80.42474
+  },
+  {
+    "buildingCode": "COL",
+    "latitude": 37.22245,
+    "longitude": -80.41893
+  },
+  {
+    "buildingCode": "CSB",
+    "latitude": 37.22156,
+    "longitude": -80.42257
+  },
+  {
+    "buildingCode": "DAV",
+    "latitude": 37.22674,
+    "longitude": -80.42521
+  },
+  {
+    "buildingCode": "DER",
+    "latitude": 37.22908,
+    "longitude": -80.4256
+  },
+  {
+    "buildingCode": "DTRIK",
+    "latitude": 37.22454,
+    "longitude": -80.42111
+  },
+  {
+    "buildingCode": "DURHM",
+    "latitude": 37.23174,
+    "longitude": -80.42382
+  },
+  {
+    "buildingCode": "EGG E",
+    "latitude": 37.22766,
+    "longitude": -80.41938
+  },
+  {
+    "buildingCode": "EGG M",
+    "latitude": 37.22766,
+    "longitude": -80.41938
+  },
+  {
+    "buildingCode": "EGG W",
+    "latitude": 37.22766,
+    "longitude": -80.41938
+  },
+  {
+    "buildingCode": "ENGEL",
+    "latitude": 37.2234,
+    "longitude": -80.42351
+  },
+  {
+    "buildingCode": "FEM",
+    "latitude": 37.23133,
+    "longitude": -80.42124
+  },
+  {
+    "buildingCode": "FRALN",
+    "latitude": 37.22411,
+    "longitude": -80.42349
+  },
+  {
+    "buildingCode": "FST",
+    "latitude": 37.21987,
+    "longitude": -80.42532
+  },
+  {
+    "buildingCode": "GBJ",
+    "latitude": 37.22922,
+    "longitude": -80.42458
+  },
+  {
+    "buildingCode": "GLCDB",
+    "latitude": 37.22822,
+    "longitude": -80.41756
+  },
+  {
+    "buildingCode": "GOODW",
+    "latitude": 37.23237,
+    "longitude": -80.42542
+  },
+  {
+    "buildingCode": "GROVE",
+    "latitude": 37.22432,
+    "longitude": -80.42731
+  },
+  {
+    "buildingCode": "HAHNN",
+    "latitude": 37.22831,
+    "longitude": -80.42626
+  },
+  {
+    "buildingCode": "HAHNS",
+    "latitude": 37.22791,
+    "longitude": -80.42568
+  },
+  {
+    "buildingCode": "HAN",
+    "latitude": 37.23016,
+    "longitude": -80.42427
+  },
+  {
+    "buildingCode": "HARP",
+    "latitude": 37.22275,
+    "longitude": -80.42329
+  },
+  {
+    "buildingCode": "HEND",
+    "latitude": 37.23056,
+    "longitude": -80.4167
+  },
+  {
+    "buildingCode": "HILL",
+    "latitude": 37.2239,
+    "longitude": -80.42501
+  },
+  {
+    "buildingCode": "HOLD",
+    "latitude": 37.23036,
+    "longitude": -80.42238
+  },
+  {
+    "buildingCode": "HOLTZ",
+    "latitude": 37.22913,
+    "longitude": -80.42961
+  },
+  {
+    "buildingCode": "HUTCH",
+    "latitude": 37.22571,
+    "longitude": -80.42284
+  },
+  {
+    "buildingCode": "JCH",
+    "latitude": 37.22386,
+    "longitude": -80.42265
+  },
+  {
+    "buildingCode": "JOHN",
+    "latitude": 37.22554,
+    "longitude": -80.41773
+  },
+  {
+    "buildingCode": "LANE",
+    "latitude": 37.2309,
+    "longitude": -80.41978
+  },
+  {
+    "buildingCode": "LARTS",
+    "latitude": 37.230591,
+    "longitude": -80.420843
+  },
+  {
+    "buildingCode": "LATH",
+    "latitude": 37.22454,
+    "longitude": -80.42259
+  },
+  {
+    "buildingCode": "LFSCI",
+    "latitude": 37.22092,
+    "longitude": -80.42469
+  },
+  {
+    "buildingCode": "LIBR",
+    "latitude": 37.22876,
+    "longitude": -80.41924
+  },
+  {
+    "buildingCode": "LITRV",
+    "latitude": 37.2216,
+    "longitude": -80.424
+  },
+  {
+    "buildingCode": "MAC",
+    "latitude": 37.23234,
+    "longitude": -80.41765
+  },
+  {
+    "buildingCode": "MAJWM",
+    "latitude": 37.23106,
+    "longitude": -80.42078
+  },
+  {
+    "buildingCode": "MCB",
+    "latitude": 37.23062,
+    "longitude": -80.42178
+  },
+  {
+    "buildingCode": "MCCOM",
+    "latitude": 37.22069,
+    "longitude": -80.4223
+  },
+  {
+    "buildingCode": "MEDIA",
+    "latitude": 37.22882,
+    "longitude": -80.41533
+  },
+  {
+    "buildingCode": "MILES",
+    "latitude": 37.2255,
+    "longitude": -80.41696
+  },
+  {
+    "buildingCode": "MIL",
+    "latitude": 37.23181,
+    "longitude": -80.42153
+  },
+  {
+    "buildingCode": "MON",
+    "latitude": 37.23194,
+    "longitude": -80.41936
+  },
+  {
+    "buildingCode": "MRYMN",
+    "latitude": 37.22155,
+    "longitude": -80.41906
+  },
+  {
+    "buildingCode": "NEW",
+    "latitude": 37.22612,
+    "longitude": -80.41787
+  },
+  {
+    "buildingCode": "NOR",
+    "latitude": 37.22944,
+    "longitude": -80.42312
+  },
+  {
+    "buildingCode": "NRH E",
+    "latitude": 37.22554,
+    "longitude": -80.41918
+  },
+  {
+    "buildingCode": "NRH W",
+    "latitude": 37.22503,
+    "longitude": -80.41991
+  },
+  {
+    "buildingCode": "OSHA",
+    "latitude": 37.22538,
+    "longitude": -80.41832
+  },
+  {
+    "buildingCode": "OWENS",
+    "latitude": 37.22671,
+    "longitude": -80.41889
+  },
+  {
+    "buildingCode": "PAB",
+    "latitude": 37.230591,
+    "longitude": -80.420843
+  },
+  {
+    "buildingCode": "PAM",
+    "latitude": 37.22876,
+    "longitude": -80.42462
+  },
+  {
+    "buildingCode": "PAT",
+    "latitude": 37.22922,
+    "longitude": -80.4222
+  },
+  {
+    "buildingCode": "PAYNE",
+    "latitude": 37.22582,
+    "longitude": -80.42
+  },
+  {
+    "buildingCode": "PRICE",
+    "latitude": 37.22574,
+    "longitude": -80.42408
+  },
+  {
+    "buildingCode": "PRT E",
+    "latitude": 37.22433,
+    "longitude": -80.41974
+  },
+  {
+    "buildingCode": "PRT W",
+    "latitude": 37.22433,
+    "longitude": -80.41974
+  },
+  {
+    "buildingCode": "PY",
+    "latitude": 37.22503,
+    "longitude": -80.41991
+  },
+  {
+    "buildingCode": "RAND",
+    "latitude": 37.2304,
+    "longitude": -80.42368
+  },
+  {
+    "buildingCode": "RFH",
+    "latitude": 37.21899,
+    "longitude": -80.42168
+  },
+  {
+    "buildingCode": "ROB",
+    "latitude": 37.22783,
+    "longitude": -80.42518
+  },
+  {
+    "buildingCode": "SANDY",
+    "latitude": 37.2258,
+    "longitude": -80.42351
+  },
+  {
+    "buildingCode": "SAUND",
+    "latitude": 37.22495,
+    "longitude": -80.42436
+  },
+  {
+    "buildingCode": "SEC",
+    "latitude": 37.23148,
+    "longitude": -80.42159
+  },
+  {
+    "buildingCode": "SEITZ",
+    "latitude": 37.22448,
+    "longitude": -80.42361
+  },
+  {
+    "buildingCode": "SHANK",
+    "latitude": 37.23185,
+    "longitude": -80.41983
+  },
+  {
+    "buildingCode": "SL TW",
+    "latitude": 37.22514,
+    "longitude": -80.42219
+  },
+  {
+    "buildingCode": "SLUSH",
+    "latitude": 37.22514,
+    "longitude": -80.42219
+  },
+  {
+    "buildingCode": "SM CC",
+    "latitude": 37.22156,
+    "longitude": -80.42257
+  },
+  {
+    "buildingCode": "SMYTH",
+    "latitude": 37.22498,
+    "longitude": -80.42315
+  },
+  {
+    "buildingCode": "SOL",
+    "latitude": 37.22622,
+    "longitude": -80.42689
+  },
+  {
+    "buildingCode": "SQUIR",
+    "latitude": 37.22962,
+    "longitude": -80.41796
+  },
+  {
+    "buildingCode": "SSB",
+    "latitude": 37.22208,
+    "longitude": -80.42183
+  },
+  {
+    "buildingCode": "STAD",
+    "latitude": 37.21997,
+    "longitude": -80.41873
+  },
+  {
+    "buildingCode": "STCTR",
+    "latitude": 37.21965,
+    "longitude": -80.41372
+  },
+  {
+    "buildingCode": "SURGE",
+    "latitude": 37.23301,
+    "longitude": -80.423
+  },
+  {
+    "buildingCode": "T101",
+    "latitude": 37.23018,
+    "longitude": -80.41634
+  },
+  {
+    "buildingCode": "THOM",
+    "latitude": 37.23214,
+    "longitude": -80.42005
+  },
+  {
+    "buildingCode": "TORG",
+    "latitude": 37.22978,
+    "longitude": -80.41997
+  },
+  {
+    "buildingCode": "VAW",
+    "latitude": 37.22684,
+    "longitude": -80.41765
+  },
+  {
+    "buildingCode": "VM 1",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM 2",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM 3",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM 4B",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM 4D",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM 4",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM4C1",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM4C2",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "VM4C3",
+    "latitude": 37.21803,
+    "longitude": -80.42744
+  },
+  {
+    "buildingCode": "WAL",
+    "latitude": 37.22297,
+    "longitude": -80.42427
+  },
+  {
+    "buildingCode": "WHIT",
+    "latitude": 37.23107,
+    "longitude": -80.42445
+  },
+  {
+    "buildingCode": "WLH",
+    "latitude": 37.2311,
+    "longitude": -80.42281
+  },
+  {
+    "buildingCode": "WMS",
+    "latitude": 37.22784,
+    "longitude": -80.42435
+  },
+  {
+    "buildingCode": "WRGHT",
+    "latitude": 37.22683,
+    "longitude": -80.42617
+  }
+]
