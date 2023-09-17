@@ -35,8 +35,8 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 	}
 
 	@GetMapping("/")
-	public Resource home() {
-		return new ClassPathResource("templates/index.html");
+	public String home() {
+		return "Dawg";
 	}
 
 	//CREATE
