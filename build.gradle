@@ -67,27 +67,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-}
-
-task npmInstallDependencies(type: NpmTask) {
-	dependsOn 'npmSetup'
-	execOverrides {
-		it.ignoreExitValue = true
-		it.workingDir = 'src/main/my-react-app'
-	}
-	args['install']
-}
-
-task npmBuild(type: NpmTask) {
-	execOverrides {
-		it.workingDir = 'src/main/my-react-app'
-	}
-	args=['run', 'build']
-}
-
-task copyFrontedToBuild(type: Copy) {
-	from "$projectDir/src/main/my-react-app/build/"
-	into "$buildDir/resources/main/static"
+	implementation 'com.google.code.gson:gson:2.10.1'
 }
 
 tasks.named('test') {

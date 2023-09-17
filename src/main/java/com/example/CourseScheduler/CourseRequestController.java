@@ -18,6 +18,9 @@ public class CourseRequestController {
     @PostMapping("/submit")
     List<List<GradeDistributionItem>> processCourseRequest(@RequestBody List<CourseRequest> courses) {
         CourseRanker ranker = new CourseRanker(itemRepository, courses);
+        if (courses.get(0).getAccessibleRouting()) {
+            return ranker.generateAccessibilitySchedule();
+        }
         return ranker.generateSchedule();
     }
 }
