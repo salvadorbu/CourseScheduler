@@ -13,8 +13,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.io.FileReader;
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
@@ -96,7 +94,7 @@ public class CourseRanker {
                 "\nTaking into account both the GPA and the Distance between the building where a higher GPA is better and a lower distance is better," +
                 " please return a string formatted like \"[CRN, CRN, CRN, ...]\" that includes one of every single class. The classes can be identified by their Subject and course no." +
                 " Lastly, take into account the start and end time when creating this list to make sure no two classes overlap. When you answer, please only output the list and nothing more. The classData = " + classData + "\n and the " +
-                "distanceMap = " + distanceMap;
+                "distanceMap = ";
         System.out.println(prompt);
         System.out.println(chatGPT(prompt));
 

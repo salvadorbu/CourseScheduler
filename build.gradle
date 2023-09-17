@@ -63,7 +63,7 @@ task npmBuild(type: NpmTask) {
 
 task copyFrontEndToBuild(type: Copy) {
 	dependsOn 'npmBuild'
-	from "$projectDir/src/main/my-react-app"
+	from "$projectDir/src/main/my-react-app/build/"
 	into "$buildDir/resources/main/static"
 }
 
@@ -80,6 +80,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'com.google.code.gson:gson:2.10.1'
 }
 
 tasks.named('test') {
