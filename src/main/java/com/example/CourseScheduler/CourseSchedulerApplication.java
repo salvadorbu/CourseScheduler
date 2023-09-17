@@ -1,11 +1,15 @@
 package com.example.CourseScheduler;
 
 import com.example.CourseScheduler.model.GradeDistributionItem;
+import org.apache.tomcat.util.file.ConfigurationSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +24,7 @@ import java.util.Map;
 @EnableMongoRepositories
 public class CourseSchedulerApplication implements CommandLineRunner {
 	@Autowired
-	ItemRepository gradeDistributionItemRepo;
+	private ItemRepository gradeDistributionItemRepo;
 	public static void main(String[] args) {
 		SpringApplication.run(CourseSchedulerApplication.class, args);
 	}
@@ -28,6 +32,11 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
 		return String.format("Hello %s!", name);
+	}
+
+	@GetMapping("/")
+	public Resource home() {
+		return new ClassPathResource("templates/index.html");
 	}
 
 	//CREATE
@@ -48,41 +57,8 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 		System.out.println("Data creation complete...");
 	}
 
-	// 4. Get count of documents in the collection
-	public void findCountOfItems() {
-		long count = gradeDistributionItemRepo.count();
-		System.out.println("Number of documents in the collection: " + count);
-	}
-
-	// Print details in readable form
-
-	public String getItemDetails(GradeDistributionItem item) {
-
-		System.out.println(
-				"Course Number: " + item.getCourseNo() +
-						", \nSubject: " + item.getSubject() +
-						", \nInstructor: " + item.getInstructor() +
-						", \nGPA: " + item.getGPA()
-		);
-
-		return "";
-	}
-
-	public void deleteGradeDistributionItem(String id) {
-		gradeDistributionItemRepo.deleteById(id);
-		System.out.println("Item with id " + id + " deleted...");
-	}
-
-	public void deleteAllItems(){
-		gradeDistributionItemRepo.findAll().forEach(
-				item -> gradeDistributionItemRepo.delete(item)
-		);
-	}
-
 	public void run(String... args) throws IOException {
-		System.out.println("-------------CREATE ITEMS-------------------------------\n");
-
-		createGradeDistributionItems();
-
+		System.out.println("-------------MONGODB STATS-------------------------------\n");
+		System.out.println("Database entry count: " + gradeDistributionItemRepo.count());
 	}
 }

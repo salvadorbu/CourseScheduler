@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("gradedistributionitems")
-public class GradeDistributionItem {
+public class GradeDistributionItem implements Comparable {
     public String getSubject() {
         return subject;
     }
@@ -59,9 +59,9 @@ public class GradeDistributionItem {
 
 
 
-    public GradeDistributionItem(String crn, String subject, String courseNo, String instructor, double GPA, String room, String building, String startTime, String endTime){
+    public GradeDistributionItem(String CRN, String subject, String courseNo, String instructor, double GPA, String room, String building, String startTime, String endTime){
         super();
-        this.CRN = crn;
+        this.CRN = CRN;
         this.subject = subject;
         this.courseNo = courseNo;
         this.instructor = instructor;
@@ -75,6 +75,12 @@ public class GradeDistributionItem {
     @Override
     public String toString() {
         return "crn=" + CRN + ",subject=" + subject +
-                ",courseNo=" + courseNo + ",instructor=" + instructor + ",room=" + room + ",building=" + building;
+                ",courseNo=" + courseNo + ",instructor=" + instructor + ",room=" + room + ",building=" + building + ",gpa=" + GPA;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        GradeDistributionItem other = (GradeDistributionItem)o;
+        return Double.compare(this.GPA, other.GPA);
     }
 }

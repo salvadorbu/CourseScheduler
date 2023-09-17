@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface ItemRepository extends MongoRepository<GradeDistributionItem, String> {
 
-
     @Query(value="{subject:'?0', courseNo: '?1'}")
     List<GradeDistributionItem> findAll(String subject, String courseNo);
 }

@@ -22,6 +22,42 @@ repositories {
 	mavenCentral()
 }
 
+node {
+	version = '18.15.0'
+	download = false
+	distBaseUrl = "https://nodejs.org/dist"
+
+	// Specifies whether it is acceptable to communicate with the Node.js repository over an insecure HTTP connection.
+	// Only used if download is true
+	// Change it to true if you use a mirror that uses HTTP rather than HTTPS
+	// Or set to null if you want to use Gradle's default behaviour.
+	allowInsecureProtocol = null
+
+	// The npm command executed by the npmInstall task
+	// By default it is install but it can be changed to ci
+	npmInstallCommand = "install"
+
+	// The directory where Node.js is unpacked (when download is true)
+	workDir = file("${project.projectDir}/.gradle/nodejs")
+
+	// The directory where npm is installed (when a specific version is defined)
+	npmWorkDir = file("${project.projectDir}/.gradle/npm")
+
+	// The directory where yarn is installed (when a Yarn task is used)
+	yarnWorkDir = file("${project.projectDir}/.gradle/yarn")
+
+	// The Node.js project directory location
+	// This is where the package.json file and node_modules directory are located
+	// By default it is at the root of the current project
+	nodeProjectDir = file("${project.projectDir}")
+
+	// Whether the plugin automatically should add the proxy configuration to npm and yarn commands
+	// according the proxy configuration defined for Gradle
+	// Disable this option if you want to configure the proxy for npm or yarn on your own
+	// (in the .npmrc file for instance)
+	nodeProxySettings = ProxySettings.SMART
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.jsoup:jsoup:1.14.3'
@@ -31,6 +67,27 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+}
+
+task npmInstallDependencies(type: NpmTask) {
+	dependsOn 'npmSetup'
+	execOverrides {
+		it.ignoreExitValue = true
+		it.workingDir = 'src/main/my-react-app'
+	}
+	args['install']
+}
+
+task npmBuild(type: NpmTask) {
+	execOverrides {
+		it.workingDir = 'src/main/my-react-app'
+	}
+	args=['run', 'build']
+}
+
+task copyFrontedToBuild(type: Copy) {
+	from "$projectDir/src/main/my-react-app/build/"
+	into "$buildDir/resources/main/static"
 }
 
 tasks.named('test') {
