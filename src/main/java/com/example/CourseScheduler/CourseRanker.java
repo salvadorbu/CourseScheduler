@@ -42,10 +42,6 @@ public class CourseRanker {
 
             sortedCourses.add(sorted);
         }
-
-        for (GradeDistributionItem gdi : availableCourses.get(2)) {
-            System.out.println(gdi.toString());
-        }
         return sortedCourses;
     }
 }
