@@ -59,6 +59,7 @@ public class CourseSchedulerApplication implements CommandLineRunner {
 
 	public void run(String... args) throws IOException {
 		System.out.println("-------------MONGODB STATS-------------------------------\n");
+		System.out.println("UPDATE1");
 		System.out.println("Database entry count: " + gradeDistributionItemRepo.count());
 	}
 }

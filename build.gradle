@@ -44,6 +44,33 @@ node {
 	npmWorkDir = file("${project.projectDir}/src/main/my-react-app/npm")
 }
 
+task npmInstallDependencies(type: NpmTask) {
+	dependsOn 'npmSetup'
+	execOverrides {
+		it.ignoreExitValue = true
+		it.workingDir = 'src/main/my-react-app'
+	}
+	args = ['install']
+}
+
+task npmBuild(type: NpmTask) {
+	dependsOn 'npmInstallDependencies'
+	execOverrides {
+		it.workingDir = 'src/main/my-react-app'
+	}
+	args = ['run', 'build']
+}
+
+task copyFrontEndToBuild(type: Copy) {
+	dependsOn 'npmBuild'
+	from "$projectDir/src/main/my-react-app"
+	into "$buildDir/resources/main/static"
+}
+
+processResources {
+	dependsOn 'copyFrontEndToBuild'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.jsoup:jsoup:1.14.3'
