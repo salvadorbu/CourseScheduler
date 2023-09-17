@@ -48,11 +48,14 @@ public class GradeDistributionItem implements Comparable {
     private String instructor;
 
     private String startTime;
+    public String getStartTime() {return startTime;}
 
     private String endTime;
+    public String getEndTime() {return endTime;}
     private double GPA;
 
     private String building;
+    public String getBuilding() {return building;}
 
     private String room;
     public String getRoom() { return room; }
